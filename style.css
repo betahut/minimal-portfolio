@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,800|Roboto:400,900&display=swap');
+
+*{ box-sizing: border-box; margin: 0; }
+body{ font-family: "Roboto", sans-serif; }
+
+/* Navigation */
+.nav-container{ background: #fffffa; box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1); height: 72px; margin-top: -65px; z-index: 500; position: relative; }
+nav{ display: flex; justify-content: space-between; align-items: center; height: 72px; }
+nav ul{ display: flex; }
+nav .logo{ font-family: 'Poppins', sans-serif; font-style: normal; font-weight: 800; font-size: 64px; color: #021718; }
+
+.nav-items li{ list-style: none; margin-right: 100px; }
+.nav-items li:nth-last-of-type(1){ margin: 0px; }
+
+.nav-items li a{ font-family: 'Poppins', sans-serif; font-size: 24px; color: #021718; text-decoration: none; }
+
+.wrapper{ width: 1200px; margin: 0 auto; }
+
+/* Header */
+.header-container{ background: #f5a05c url('images/bg-shape.svg'); background-repeat: no-repeat; background-position: right; background-size: contain; height: calc(100vh - 72px); display: flex; align-items: center; }
+header{ display: flex; justify-content: space-between; align-items: center; }
+header h1{ font-weight: 900; font-size: 64px; line-height: 75px; color: #021718; margin-bottom: 24px; }
+header p{ font-size: 24px; line-height: 42px; color: #021718; width: 418px; margin-bottom: 48px; }
+header a{ color: #fffffa; font-size: 24px; text-decoration: none; background: #01847f; border-radius: 8px; padding: 12px 48px; display: inline-block; transition: all 0.3s; }
+header a:hover{ transform: translateY(-8px); }
+
+/* Social Icons */
+.social-icons{ display: flex; align-items: center; }
+.social-icons img{ height: 45px; width: 45px; }
+.social-icons a{ margin: 0 24px; text-decoration: none; }
+.social-icons a:nth-of-type(1){ margin-left: 0px; }
+
+/* Hero Image */
+header .hero-image{ position: relative; }
+header .hero-image img{ transition: all 0.3s; position: relative; z-index: 100; }
+header .hero-image img:hover{ transform: rotate(-6deg); }
+header .hero-image .photo-bg{ transform: rotate(-6deg); position: absolute; background: #44a1a0; width: 500px; height: 500px; top: 25px; left: 46px; }
+
+/* Search Box */
+.search-box{ width: 1200px; margin: 0 auto; text-align: right; position: relative; top: 0; transition: all 0.3s; }
+.search-box.active{ top: 72px; }
+
+.search-box input{ background: #fffffa; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); border-radius: 0px 0px 8px 8px; font-size: 24px; line-height: 42px; border: 0; padding: 12px 48px; }
+.search-box input::placeholder{ color: #b3b3b3; }
+
+/* Search & Close Buttons */
+.nav-btn-container{ display: flex; position: relative; height: 35px; width: 35px; }
+.nav-btn-container img{ position: absolute; }
+.nav-btn-container .close-btn{ opacity: 0; pointer-events: none; transform: translateY(-8px); transition: all 0.3s; }
+.nav-btn-container .search-btn{ transition: all 0.3s; pointer-events: auto; }
+.nav-btn-container.active .search-btn{ opacity: 0; pointer-events: none; transform: translateY(-8px); }
+.nav-btn-container.active .close-btn{ opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+/* Media Query */
+
+@media (max-width: 1024px) {
+    .wrapper, .search-box{ width: 100vw; overflow: hidden; padding: 0 50px; }
+}
+
+@media (max-width: 768px) {
+    .nav-items li:nth-last-of-type(1){ display: flex; }
+    .header-container{ height: auto; }
+    header{ flex-direction: column; }
+    header p{ width: auto; }
+    .hero-content{ margin: 75px 0px; }
+    .social-icons{ justify-content: space-between; margin: 30px 0px; }
+    .header-container{ background-size: cover; }
+}
+
+@media (max-width: 430px) {
+    .nav-items li{ display: none; }
+    header .hero-image img{ height: 360px; width: 360px; }
+    header .hero-image .photo-bg{ height: 300px; width: 300px; top: 16px; left: 28px; }
+    .search-box input{ width: 100vw; }
+}
+
+@media (max-width: 320px) {
+    header .hero-image img{ height: 260px; width: 260px; }
+    header .hero-image .photo-bg{ height: 220px; width: 220px; top: 10px; left: 20px; }
+}
